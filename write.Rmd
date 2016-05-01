@@ -63,13 +63,12 @@ Model performance on the pml-testing.csv dataset and txt files
 x <- predict(f, newdata=d_test)
 ```
 ```
-write_file = function(x){
-  n = length(x)
-  for(i in 1:n){
-    filename = paste0("problem_id_",i,".txt")
-    write.table(x[i],file=filename,quote=FALSE,row.names=FALSE,col.names=FALSE)
+write = function(x){
+  for(i in 1:length(x)){
+    n = paste0("prob_",i,".txt")
+    write.table(x[i],file=n,quote=FALSE,row.names=FALSE,col.names=FALSE)
   }
 }
 
-write_file(x)
+write(x)
 ```
